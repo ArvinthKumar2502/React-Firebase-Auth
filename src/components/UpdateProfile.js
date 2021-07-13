@@ -14,6 +14,7 @@ export default function UpdateProfile() {
 
   function handleSubmit(e) {
     e.preventDefault()
+    console.log(currentUser);
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
     }
@@ -26,6 +27,7 @@ export default function UpdateProfile() {
       promises.push(updateEmail(emailRef.current.value))
     }
     if (passwordRef.current.value) {
+      console.log(currentUser);
       promises.push(updatePassword(passwordRef.current.value))
     }
 
